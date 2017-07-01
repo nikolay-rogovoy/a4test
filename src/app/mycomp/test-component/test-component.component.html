@@ -1,0 +1,15 @@
+<p>
+  test-component works!
+</p>
+
+<form method="#11" action="#222" name="test" id="test" (ngSubmit)="onSubmit()" #test="ngForm">
+
+    <input type="date" name="dt" id="dt" placeholder="Наименование"
+           [value]="entity.dt | date:'yyyy-MM-dd'" />
+<div>
+  {{entity.dt | date:'yyyy-MM-dd'}}
+</div>
+
+  <button type="submit" class="btn btn-fill btn-primary">Сохранить</button>
+  <button type="button" (click)="buttonClick()" class="btn btn-fill btn-primary">Опс11</button>
+</form>
