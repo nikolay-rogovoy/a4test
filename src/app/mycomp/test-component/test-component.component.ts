@@ -12,7 +12,7 @@ export class TestComponentComponent implements OnInit {
 
   @ViewChild('test')
   form: NgForm;
-  entity = new Test('2qw', new Date());
+  entity = new Test('89180420405',"qwe@gmail.com", new Date(),1, 1.2);
 
   constructor() {
   }
@@ -32,4 +32,7 @@ export class TestComponentComponent implements OnInit {
   f(obj: any) {
     console.log(obj);
   }
+  public mask1 = [/[8]/, ' ', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/];
+  //public mask2 = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}";
+
 }
