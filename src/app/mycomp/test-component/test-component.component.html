@@ -7,6 +7,8 @@
   <input [textMask]="{mask: mask1, keepCharPositions: true}" type="text" name="name"
          id="name" placeholder="Наименование"
          [(ngModel)]="entity.name" />
+  <br>
+
 
   <input type="text" name="text"
          id="email" placeholder="email"
@@ -15,7 +17,6 @@
          required
          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
   />
-
   <div class="md-errors-spacer" [hidden]="email.valid || email.untouched">
     <div class="md-char-counter" *ngIf="email.errors && email.errors.required">
       Email is required
@@ -24,6 +25,8 @@
       Email is invalid
     </div>
   </div>
+  <br>
+
 
   <input type="email" name="text2"
          id="email2" placeholder="email"
@@ -41,13 +44,15 @@
       Email is invalid
     </div>
   </div>
-
+  <br>
 
   <input type="date" name="dt" id="dt" placeholder="Наименование"
            [value]="entity.dt | date:'yyyy-MM-dd'" />
 <div>
   {{entity.dt | date:'yyyy-MM-dd'}}
 </div>
+  <br>
+
 
   <button type="submit" class="btn btn-fill btn-primary">Сохранить</button>
   <button type="button" (click)="buttonClick()" class="btn btn-fill btn-primary">Опс11</button>
