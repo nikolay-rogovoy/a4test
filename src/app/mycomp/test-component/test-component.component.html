@@ -4,7 +4,7 @@
 
 <form method="#11" action="#222" name="test" id="test" (ngSubmit)="onSubmit()" #test="ngForm">
 
-  <input [textMask]="{mask: mask1, keepCharPositions: true}" type="text" name="name"
+  <input [textMask]="{mask: fMask, keepCharPositions: true}" type="text" name="name"
          id="name" placeholder="Наименование"
          [(ngModel)]="entity.name" />
   <br>
@@ -51,6 +51,93 @@
 <div>
   {{entity.dt | date:'yyyy-MM-dd'}}
 </div>
+  <br>
+
+  <p>number required int</p>
+  <input type="number" name="num1" id="num1" placeholder="num1"
+         #num1="ngModel"
+         required
+         [(ngModel)]="entity.num1"
+         pattern="^[-+]?[0-9]*[0-9]$"
+  />
+  <div class="md-errors-spacer" [hidden]="num1.valid || num1.untouched">
+    <div class="md-char-counter" *ngIf="num1.errors && num1.errors.required">
+      is required
+    </div>
+    <div class="md-char-counter" *ngIf="num1.errors && num1.errors.pattern">
+      is invalid
+    </div>
+  </div>
+  <br>
+
+  <p>text required float OnlyNumber</p>
+  <input OnlyNumber="true" name="num2" id="num2"
+         type="text"
+         #num2="ngModel"
+         required
+         [ngModel]="entity.num2"
+         (ngModelChange)="entity.num2 = parseNumber($event);"
+         pattern="^[-+]?[0-9]*[.,]?[0-9]+(?:[eE][-+]?[0-9]+)?$"
+  />
+  <div class="md-errors-spacer" [hidden]="num2.valid || num2.untouched">
+    <div class="md-char-counter" *ngIf="num2.errors && num2.errors.required">
+      is required
+    </div>
+    <div class="md-char-counter" *ngIf="num2.errors && num2.errors.pattern">
+      is invalid
+    </div>
+  </div>
+  <br>
+
+  <p>number required float</p>
+  <input name="num22" id="num22"
+         type="number"
+         #num22="ngModel"
+         required
+         [(ngModel)]="entity.num2"
+         pattern="^[-+]?[0-9]*[.,]?[0-9]+(?:[eE][-+]?[0-9]+)?$"
+  />
+  <div class="md-errors-spacer" [hidden]="num22.valid || num22.untouched">
+    <div class="md-char-counter" *ngIf="num22.errors && num22.errors.required">
+      is required
+    </div>
+    <div class="md-char-counter" *ngIf="num2.errors && num2.errors.pattern">
+      is invalid
+    </div>
+  </div>
+  <br>
+
+  <p>number int</p>
+  <input type="number" name="num3" id="num3" placeholder="num3"
+         #num3="ngModel"
+         [(ngModel)]="entity.num3"
+         pattern="^[-+]?[0-9]*[0-9]$"
+  />
+  <div class="md-errors-spacer" [hidden]="num3.valid || num3.untouched">
+    <div class="md-char-counter" *ngIf="num3.errors && num3.errors.required">
+      is required
+    </div>
+    <div class="md-char-counter" *ngIf="num3.errors && num3.errors.pattern">
+      is invalid
+    </div>
+  </div>
+  <br>
+
+  <p>number float</p>
+  <input name="num4" id="num4"
+         type="number"
+         #num4="ngModel"
+         [(ngModel)]="entity.num4"
+         pattern="^[-+]?[0-9]*[.,]?[0-9]*(?:[eE][-+]?[0-9]+)?$"
+  />
+  <div class="md-errors-spacer" [hidden]="num4.valid || num4.untouched">
+    <div class="md-char-counter" *ngIf="num4.errors && num4.errors.required">
+      is required
+    </div>
+    <div class="md-char-counter" *ngIf="num4.errors && num4.errors.pattern">
+      is invalid
+    </div>
+  </div>
   <br>
 
 

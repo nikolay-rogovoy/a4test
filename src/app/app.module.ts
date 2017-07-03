@@ -8,12 +8,14 @@ import { MODULE_ROUTES, MODULE_COMPONENTS } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { TestComponentComponent } from './mycomp/test-component/test-component.component';
+import { OnlyNumberDirective } from './mycomp/only-number.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MODULE_COMPONENTS
+    MODULE_COMPONENTS,
+    OnlyNumberDirective
   ],
   imports: [
     BrowserModule,
