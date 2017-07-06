@@ -14,7 +14,6 @@
          id="email" placeholder="email"
          [(ngModel)]="entity.email"
          #email="ngModel"
-         required
          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
   />
   <div class="md-errors-spacer" [hidden]="email.valid || email.untouched">
@@ -32,7 +31,6 @@
          id="email2" placeholder="email"
          email
          #email2="ngModel"
-         required
          [(ngModel)]="entity.email"
 
   />
