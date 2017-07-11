@@ -7,6 +7,7 @@ import { MODULE_ROUTES, MODULE_COMPONENTS } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { TestComponentComponent } from './mycomp/test-component/test-component.component';
+import { TestComponent2Component } from './mycomp/test-component2/test-component2.component';
 
 
 @NgModule({
